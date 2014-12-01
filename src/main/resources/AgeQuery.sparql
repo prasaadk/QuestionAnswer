@@ -1,0 +1,10 @@
+PREFIX dbpedia-res: <http://dbpedia.org/resource/>
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+
+SELECT ?age
+WHERE
+{
+    ?subject dbpedia-owl:birthDate ?birthDate .
+    BIND ( year(?currentDate)-year(?birthDate) as ?age)
+
+}

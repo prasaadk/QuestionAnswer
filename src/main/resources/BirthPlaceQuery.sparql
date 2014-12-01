@@ -1,0 +1,44 @@
+PREFIX dbpedia-res: <http://dbpedia.org/resource/>
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX dbprop: <http://dbpedia.org/property/>
+
+SELECT distinct ?city ?country
+WHERE
+{
+
+	{
+
+		?subject dbpedia-owl:birthPlace ?birthPlace .
+
+		#To filter out anything that's not a place in the ontology
+		?birthPlace rdf:type dbpedia-owl:Place .
+
+		OPTIONAL {
+		    #This is an optional filter to ignore County's
+		    ?birthPlace dbprop:centre ?centre
+		}
+
+		?birthPlace rdfs:label ?city .
+
+		OPTIONAL {
+		    ?birthPlace dbpedia-owl:country [rdfs:label ?country] .
+		}
+
+		FILTER (!bound(?centre))
+		FILTER (langMatches(lang(?city),"en"))
+		FILTER (langMatches(lang(?country),"en"))
+
+	}
+	UNION
+	{
+		?subject dbprop:birthPlace ?city .
+        FILTER (!isURI(?city))
+        FILTER (langMatches(lang(?city),"en"))
+	}
+	UNION
+	{
+		?subject dbprop:birthPlace [rdfs:label ?city] .
+		FILTER (langMatches(lang(?city),"en"))
+	}
+
+}
