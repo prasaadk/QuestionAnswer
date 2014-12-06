@@ -23,9 +23,6 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.*;
 
-/**
- * Created by prasad on 30/11/14.
- */
 public class DBPediaLookup {
 
     public static final String DBPEDIA_URL = "http://dbpedia.org/sparql";
@@ -93,7 +90,7 @@ public class DBPediaLookup {
     public static String lookup(String searchString) {
 
         try {
-            URL lookupURI = new URL("http://lookup.dbpedia.org/api/search.asmx/PrefixSearch?" +
+            URL lookupURI = new URL("http://lookup.dbpedia.org/api/search.asmx/KeywordSearch?" +
                     "QueryClass=&MaxHits=5&" +
                     "QueryString=" + URLEncoder.encode(searchString,"UTF-8"));
 
