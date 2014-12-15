@@ -1,6 +1,7 @@
 PREFIX dbpedia-res: <http://dbpedia.org/resource/>
 PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
 PREFIX dbprop: <http://dbpedia.org/property/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 SELECT distinct ?city ?country
 WHERE
@@ -18,13 +19,20 @@ WHERE
 		    ?birthPlace dbprop:centre ?centre
 		}
 
+		# Turns out foaf:name provides a more accurate name compared to rdfs:label for a city name
 		?birthPlace rdfs:label ?city .
 
+
 		OPTIONAL {
-		    ?birthPlace dbpedia-owl:country [rdfs:label ?country] .
+		    ?birthPlace dbpedia-owl:country ?countryNode .
+		    OPTIONAL {
+            	?countryNode dbpprop:centre ?countryCentre .
+		    }
+		    ?countryNode rdfs:label ?country .
 		}
 
 		FILTER (!bound(?centre))
+        FILTER (!bound(?countryCentre))
 		FILTER (langMatches(lang(?city),"en"))
 		FILTER (langMatches(lang(?country),"en"))
 
@@ -39,6 +47,10 @@ WHERE
 	{
 		?subject dbprop:birthPlace [rdfs:label ?city] .
 		FILTER (langMatches(lang(?city),"en"))
+	}
+	UNION
+	{
+		?subject dbpprop:placeOfBirth ?city .
 	}
 
 }
