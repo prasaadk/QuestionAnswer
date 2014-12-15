@@ -5,6 +5,20 @@ SELECT ?age
 WHERE
 {
     ?subject dbpedia-owl:birthDate ?birthDate .
-    BIND ( year(?currentDate)-year(?birthDate) as ?age)
 
+    ### If the subject is deceased, Age calculation has to be with respect to the date of death
+    OPTIONAL {
+           ?subject dbpedia-owl:deathDate ?deathDate .
+    }
+
+    BIND ( IF (BOUND (?deathDate), ?deathDate, now()) as ?toDate  ) .
+
+    ### To counter against month in the current year being less than birth month.
+    ### (1 i.e if birth/current month hasn't crossed birth month. 0 otherwise )
+
+    BIND ( IF (month(?toDate) < month(?birthDate), 1, 0) as ?monthAdjustment  ) .
+
+    ### (death or current year) - (birth year) - (month adjustment)
+
+    BIND ( year(?toDate) - year(?birthDate) - ?monthAdjustment as ?age) .
 }
