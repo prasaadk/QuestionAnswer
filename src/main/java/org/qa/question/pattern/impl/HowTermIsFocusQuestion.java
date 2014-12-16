@@ -1,6 +1,6 @@
 package org.qa.question.pattern.impl;
 
-import org.qa.parser.QuestionCharacteristics;
+import org.qa.question.parser.QuestionCharacteristics;
 import org.qa.question.pattern.QuestionPattern;
 
 import java.util.regex.Matcher;

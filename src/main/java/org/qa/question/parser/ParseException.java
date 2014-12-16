@@ -1,4 +1,4 @@
-package org.qa.parser;
+package org.qa.question.parser;
 
 /**
  * Created by prasad on 15/12/2014.

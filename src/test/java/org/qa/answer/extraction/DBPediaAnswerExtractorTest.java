@@ -6,7 +6,7 @@ import org.qa.answer.extraction.finder.FactFinderFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.qa.parser.QuestionCharacteristics;
+import org.qa.question.parser.QuestionCharacteristics;
 
 import static org.junit.Assert.*;
 

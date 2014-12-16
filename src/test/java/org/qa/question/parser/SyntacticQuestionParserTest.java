@@ -1,8 +1,8 @@
-package org.qa.parser;
+package org.qa.question.parser;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.qa.parser.impl.SyntacticQuestionParser;
+import org.qa.question.parser.impl.SyntacticQuestionParser;
 
 import static org.junit.Assert.*;
 

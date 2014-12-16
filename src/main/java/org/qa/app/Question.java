@@ -4,9 +4,9 @@ import org.qa.answer.extraction.AnswerExtractorException;
 import org.qa.answer.extraction.DBPediaAnswerExtractor;
 import org.qa.answer.extraction.finder.FactFinderFactory;
 import org.qa.answer.extraction.finder.impl.FactFinderFactoryImpl;
-import org.qa.parser.ParseException;
-import org.qa.parser.QuestionCharacteristics;
-import org.qa.parser.impl.SyntacticQuestionParser;
+import org.qa.question.parser.ParseException;
+import org.qa.question.parser.QuestionCharacteristics;
+import org.qa.question.parser.impl.SyntacticQuestionParser;
 
 /**
  * Created by prasad on 15/12/2014.

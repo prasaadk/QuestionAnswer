@@ -3,7 +3,7 @@ package org.qa.answer.extraction;
 import org.qa.answer.extraction.finder.FactFinder;
 import org.qa.answer.extraction.finder.FactFinderException;
 import org.qa.answer.extraction.finder.FactFinderFactory;
-import org.qa.parser.QuestionCharacteristics;
+import org.qa.question.parser.QuestionCharacteristics;
 
 /**
  * Created by prasad on 15/12/2014.

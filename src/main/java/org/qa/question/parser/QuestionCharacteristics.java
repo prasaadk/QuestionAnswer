@@ -1,4 +1,4 @@
-package org.qa.parser;
+package org.qa.question.parser;
 
 import java.util.AbstractMap;
 import java.util.HashMap;

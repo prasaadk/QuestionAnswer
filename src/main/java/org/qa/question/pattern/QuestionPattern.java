@@ -1,6 +1,6 @@
 package org.qa.question.pattern;
 
-import org.qa.parser.QuestionCharacteristics;
+import org.qa.question.parser.QuestionCharacteristics;
 
 /**
  * Created by prasad on 15/12/2014.

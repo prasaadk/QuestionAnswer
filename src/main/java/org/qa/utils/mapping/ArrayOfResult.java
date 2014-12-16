@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 import java.util.List;
 
 /**
- * Created by prasad on 30/11/14.
+ * Created by prasad on 15/12/14.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement( name = "ArrayOfResult", namespace="http://lookup.dbpedia.org/" )

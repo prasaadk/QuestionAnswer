@@ -7,7 +7,7 @@ import java.lang.*;
 import java.util.List;
 
 /**
- * Created by prasad on 30/11/14.
+ * Created by prasad on 15/12/14.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement( name = "Result" , namespace="http://lookup.dbpedia.org/")

@@ -9,28 +9,32 @@ public class AgeFinderTest {
 
     @Test
     public void testLivingPerson() throws Exception {
-        assertEquals("61", new AgeFinder().get("Tony Blair"));
-        assertEquals("48", new AgeFinder().get("David Cameron"));
-        assertEquals("82", new AgeFinder().get("Manmohan Singh"));
+        assertEquals("61", getAgeFinder().get("Tony Blair"));
+        assertEquals("48", getAgeFinder().get("David Cameron"));
+        assertEquals("82", getAgeFinder().get("Manmohan Singh"));
     }
 
     @Test
     public void testDeceasedPerson() throws Exception {
-        assertEquals("95", new AgeFinder().get("Nelson Mandela"));
-        assertEquals("87", new AgeFinder().get("Margaret Thatcher"));
-        assertEquals("90", new AgeFinder().get("Winston Churchill"));
-        assertEquals("40", new AgeFinder().get("Franz Kafka"));
+        assertEquals("95", getAgeFinder().get("Nelson Mandela"));
+        assertEquals("87", getAgeFinder().get("Margaret Thatcher"));
+        assertEquals("90", getAgeFinder().get("Winston Churchill"));
+        assertEquals("40", getAgeFinder().get("Franz Kafka"));
     }
 
     @Test
     public void testNotAPerson() throws Exception {
-        assertNull(new AgeFinder().get("Yoda"));
-        assertNull(new AgeFinder().get("Han Solo"));
-        assertNull(new AgeFinder().get("Sherlock Holmes"));
+        assertNull(getAgeFinder().get("Yoda"));
+        assertNull(getAgeFinder().get("Han Solo"));
+        assertNull(getAgeFinder().get("Sherlock Holmes"));
     }
 
     @Test (expected = FactFinderException.class)
     public void testWrongName() throws Exception {
-        new AgeFinder().get("asdfasdf");
+        getAgeFinder().get("asdfasdf");
+    }
+
+    private AgeFinder getAgeFinder() {
+        return new AgeFinder();
     }
 }

@@ -3,7 +3,7 @@ package org.qa.utils.mapping;
 import javax.xml.bind.annotation.*;
 
 /**
- * Created by prasad on 30/11/14.
+ * Created by prasad on 15/12/14.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement (name = "Class", namespace="http://lookup.dbpedia.org/")

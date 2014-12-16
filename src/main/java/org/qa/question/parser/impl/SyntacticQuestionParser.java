@@ -1,9 +1,9 @@
-package org.qa.parser.impl;
+package org.qa.question.parser.impl;
 
 import com.google.common.collect.Lists;
-import org.qa.parser.ParseException;
-import org.qa.parser.QuestionCharacteristics;
-import org.qa.parser.QuestionParser;
+import org.qa.question.parser.ParseException;
+import org.qa.question.parser.QuestionCharacteristics;
+import org.qa.question.parser.QuestionParser;
 import org.qa.question.pattern.QuestionPattern;
 import org.qa.question.pattern.impl.HowTermIsFocusQuestion;
 import org.qa.question.pattern.impl.WhatIsTermOfFocusQuestion;
