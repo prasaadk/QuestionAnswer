@@ -12,7 +12,7 @@ As per the interview tests requirement, required Question and Question test clas
 
 ## Usage
 
-    $ java -jar target/org.questions-1.0-SNAPSHOT.jar "what is the birth place of David Cameron?"
+    $ java -jar target/org.questions-1.0-SNAPSHOT.jar "<the question>"
 
 ## Examples
 
