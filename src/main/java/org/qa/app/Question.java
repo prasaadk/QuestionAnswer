@@ -15,8 +15,17 @@ public class Question {
 
     public static String ask(String question) throws ParseException, AnswerExtractorException {
         QuestionCharacteristics questionCharacteristics = new SyntacticQuestionParser().parse(question);
-        FactFinderFactory factFinderFactory = new FactFinderFactoryImpl();
+        FactFinderFactory factFinderFactory = FactFinderFactoryImpl.getInstance();
 
         return new DBPediaAnswerExtractor(factFinderFactory).findAnswer(questionCharacteristics);
+    }
+
+    public static void main(String args[]) throws ParseException, AnswerExtractorException {
+        if (args.length > 0) {
+            String question = args[0];
+            System.out.println("Question: "+ question);
+            System.out.println("Answer  : "+ Question.ask(question));
+        }
+        System.exit(0);
     }
 }

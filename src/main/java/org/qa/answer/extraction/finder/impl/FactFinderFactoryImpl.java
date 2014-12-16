@@ -24,4 +24,8 @@ public class FactFinderFactoryImpl implements FactFinderFactory {
     public FactFinder getFactFinderFor(String term) {
         return m_termMapper.get(term);
     }
+
+    public static FactFinderFactory getInstance() {
+        return new FactFinderFactoryImpl();
+    }
 }
