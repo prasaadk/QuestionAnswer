@@ -1,10 +1,6 @@
 # question-answer
 
 Question Answer application prepared to answer simple questions from DBPedia.
-As per the interview tests requirement, required Question and Question test classes are:
-
-    src/main/java/org.qa.app.Question
-    src/test/java/org.qa.app.QuestionTest
 
 ## Installation
 
